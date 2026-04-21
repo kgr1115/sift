@@ -1,0 +1,70 @@
+[
+  {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-6",
+    "accuracy": 0.95,
+    "errors": 0,
+    "input_tokens": 73317,
+    "output_tokens": 5552,
+    "total_latency_ms": 124354.14640007366,
+    "estimated_cost_usd": 0.303231,
+    "per_category_recall": {
+      "urgent": 1.0,
+      "trash": 1.0,
+      "needs_reply": 0.8,
+      "newsletter": 1.0,
+      "fyi": 1.0
+    }
+  },
+  {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "accuracy": 0.925,
+    "errors": 0,
+    "input_tokens": 42284,
+    "output_tokens": 1886,
+    "total_latency_ms": 59143.76259998244,
+    "estimated_cost_usd": 0.0074742,
+    "per_category_recall": {
+      "urgent": 1.0,
+      "trash": 0.8333333333333334,
+      "needs_reply": 0.9,
+      "newsletter": 1.0,
+      "fyi": 0.9090909090909091
+    }
+  },
+  {
+    "provider": "google",
+    "model": "gemini-2.5-flash",
+    "accuracy": 0.9,
+    "errors": 0,
+    "input_tokens": 39559,
+    "output_tokens": 2525,
+    "total_latency_ms": 40808.76249994617,
+    "estimated_cost_usd": 0.018180199999999997,
+    "per_category_recall": {
+      "urgent": 0.8,
+      "trash": 1.0,
+      "needs_reply": 0.8,
+      "newsletter": 0.875,
+      "fyi": 1.0
+    }
+  },
+  {
+    "provider": "groq",
+    "model": "llama-3.3-70b-versatile",
+    "accuracy": 0.975,
+    "errors": 0,
+    "input_tokens": 48136,
+    "output_tokens": 1891,
+    "total_latency_ms": 210143.8500000222,
+    "estimated_cost_usd": 0.029894129999999998,
+    "per_category_recall": {
+      "urgent": 1.0,
+      "trash": 1.0,
+      "needs_reply": 1.0,
+      "newsletter": 0.875,
+      "fyi": 1.0
+    }
+  }
+]

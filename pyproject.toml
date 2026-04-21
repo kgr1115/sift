@@ -1,0 +1,57 @@
+[project]
+name = "sift"
+version = "0.1.0"
+description = "Sift — an AI assistant that triages your Gmail, drafts replies in your voice, and gives you a morning brief."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Kyle Rauch", email = "kyle.g.rauch@gmail.com" }]
+license = { text = "MIT" }
+
+dependencies = [
+  # LLM providers — all four are hard deps so the comparison eval and the
+  # facade in sift.llm can import without try/except gymnastics.
+  # API calls are only made for providers whose API key is set at runtime.
+  "anthropic>=0.39.0",
+  "openai>=1.40.0",
+  "google-genai>=0.3.0",
+  # Gmail
+  "google-api-python-client>=2.120.0",
+  "google-auth-httplib2>=0.2.0",
+  "google-auth-oauthlib>=1.2.0",
+  # App plumbing
+  "python-dotenv>=1.0.1",
+  "pydantic>=2.6.0",
+  "rich>=13.7.0",
+  "streamlit>=1.32.0",
+  "typer>=0.12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "pytest-cov>=4.1.0",
+  "ruff>=0.3.0",
+  "mypy>=1.9.0",
+]
+
+[project.scripts]
+sift = "sift.cli:app"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "A", "C4", "SIM", "RUF"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "evals"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"

@@ -1,0 +1,32 @@
+# Secrets — NEVER commit these
+.env
+credentials.json
+token.json
+*.pem
+
+# Local data
+*.db
+*.db-journal
+.cache/
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+pytest-cache-files-*/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+dist/
+build/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
